@@ -1,8 +1,4 @@
-# Install required UI/Dashboard packages if needed
-# install.packages(c("shiny", "shinydashboard", "DT", "ggplot2", "scales"))
-
-# Install required UI/Dashboard packages if needed
-# install.packages(c("shiny", "shinydashboard", "DT", "ggplot2", "scales"))
+##required packages
 
 library(shiny)
 library(shinydashboard)
@@ -10,7 +6,7 @@ library(tidyverse)
 library(DT)
 library(scales)
 
-# Load the generated dataset
+# Loading the generated dataset
 ar_data <- read.csv("synthetic_ar_data.csv")
 ar_data$Aging_Bucket <- factor(ar_data$Aging_Bucket, levels = c("Current", "1-30 Days", "31-60 Days", "61-90 Days", "90+ Days"))
 
@@ -151,5 +147,5 @@ server <- function(input, output) {
   })
 }
 
-# Run the Application 
+# Running the Application 
 shinyApp(ui = ui, server = server)
